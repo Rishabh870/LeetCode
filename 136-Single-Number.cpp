@@ -1,16 +1,12 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        map<int,int> a;
+       int a =0;
         for( int i:nums){
-            a[i]++;
+           a^=i;
         }
-        for(auto b:a){
-            if(b.second==1){
-                return b.first;
-            }
-        }
+        
 
-        return -1;
+        return a;
     }
 };
